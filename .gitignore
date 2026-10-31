@@ -1,0 +1,10 @@
+__pycache__/
+*.egg-info/
+.pytest_cache/
+.venv/
+.env
+data/*.sqlite
+data/*.duckdb
+traces/
+*.jsonl
+.claude/settings.local.json

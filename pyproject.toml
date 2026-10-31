@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "analytics-agent"
+version = "0.1.0"
+description = "Production-grade text-to-SQL analytics agent: LangGraph + semantic layer + Qdrant + DuckDB + FastAPI"
+requires-python = ">=3.10"
+dependencies = [
+  "fastapi>=0.110",
+  "uvicorn>=0.30",
+  "langgraph>=0.2",
+  "anthropic>=0.34",
+  "duckdb>=1.0",
+  "sqlglot>=25",
+  "qdrant-client>=1.10",
+  "pydantic>=2.6",
+  "pyyaml>=6",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pytest-cov", "httpx"]
+
+[project.scripts]
+analytics-eval = "analytics_agent.evals.run:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+analytics_agent = ["*.yaml", "evals/*.yaml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

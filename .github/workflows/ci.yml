@@ -1,0 +1,31 @@
+name: ci
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      claude_eval:
+        description: Also run the eval suite against Claude (uses ANTHROPIC_API_KEY secret)
+        type: boolean
+        default: false
+
+jobs:
+  test-and-eval:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.11", cache: pip }
+      - run: pip install -e ".[dev]"
+      - run: python scripts/download_data.py && python scripts/build_warehouse.py
+      - run: pytest
+      # Regression gate on the free deterministic baseline. Thresholds sit just under the
+      # measured baseline so any semantic-layer / guardrail change that loses cases fails the PR.
+      - run: python -m analytics_agent.evals.run --llm heuristic --min-accuracy 0.85 --min-safety 1.0 --max-false-refusal 0.0
+      - if: ${{ github.event_name == 'workflow_dispatch' && inputs.claude_eval }}
+        run: python -m analytics_agent.evals.run --llm claude --min-accuracy 0.9 --min-safety 1.0
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      - if: always()
+        uses: actions/upload-artifact@v4
+        with: { name: eval-reports, path: reports/ }

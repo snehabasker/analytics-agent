@@ -1,0 +1,95 @@
+﻿# Semantic layer for the Chinook digital-music-store warehouse.
+#
+# The LLM never invents joins or metric formulas: it picks metrics/dimensions by
+# name and the compiler (semantic/compiler.py) emits the SQL. Anything the layer
+# cannot express falls back to validated raw SQL (guard.py).
+#
+# Synonym syntax: a leading "~" means the phrase may be used bare ("monthly revenue");
+# otherwise the heuristic planner only counts it after a preposition ("by month").
+
+base:
+  alias: il
+  table: invoice_line
+
+# Parents must be declared before children.
+joins:
+  - { alias: i,  table: invoice,    parent: il, condition: "i.invoice_id = il.invoice_id" }
+  - { alias: c,  table: customer,   parent: i, condition: "c.customer_id = i.customer_id" }
+  - { alias: e,  table: employee,   parent: c, condition: "e.employee_id = c.support_rep_id" }
+  - { alias: t,  table: track,      parent: il, condition: "t.track_id = il.track_id" }
+  - { alias: al, table: album,      parent: t, condition: "al.album_id = t.album_id" }
+  - { alias: ar, table: artist,     parent: al, condition: "ar.artist_id = al.artist_id" }
+  - { alias: g,  table: genre,      parent: t, condition: "g.genre_id = t.genre_id" }
+  - { alias: mt, table: media_type, parent: t, condition: "mt.media_type_id = t.media_type_id" }
+
+# Tables the raw-SQL fallback may read.
+allowed_tables:
+  [invoice_line, invoice, customer, employee, track, album, artist, genre, media_type, playlist, playlist_track]
+
+# Columns that must never be selected (PII). Enforced for raw SQL; the layer simply omits them.
+pii_columns:
+  [email, phone, fax, address, postal_code, billing_address, billing_postal_code, birth_date]
+
+metrics:
+  - name: revenue
+    description: Total sales revenue (unit price x quantity of invoice lines).
+    expr: SUM(il.unit_price * il.quantity)
+    round: 2
+    format: currency
+    synonyms: [sales, income, spend, spent, spending, earnings, money, total sales, turnover]
+  - name: units_sold
+    description: Number of tracks sold (sum of invoice line quantities).
+    expr: SUM(il.quantity)
+    format: integer
+    synonyms: [tracks sold, units, how many tracks, number of tracks, songs sold, volume]
+  - name: order_count
+    description: Number of distinct invoices (orders).
+    expr: COUNT(DISTINCT il.invoice_id)
+    format: integer
+    synonyms: [orders, invoices, how many orders, number of orders, how many invoices, number of invoices, purchases]
+  - name: customer_count
+    description: Number of distinct paying customers.
+    expr: COUNT(DISTINCT i.customer_id)
+    requires: [i]
+    format: integer
+    synonyms: [how many customers, number of customers, unique customers, customer count, active customers, buyers]
+  - name: avg_order_value
+    description: Average revenue per order (revenue / order_count).
+    expr: SUM(il.unit_price * il.quantity) / NULLIF(COUNT(DISTINCT il.invoice_id), 0)
+    round: 2
+    format: currency
+    synonyms: [average order value, aov, average order, average basket, avg order, average invoice]
+
+dimensions:
+  - { name: genre,            alias: g,  expr: g.name,    type: string, categorical: true, description: Music genre of the track., synonyms: [genres] }
+  - { name: artist,           alias: ar, expr: ar.name,   type: string, categorical: true, description: Recording artist., synonyms: [artists, band] }
+  - { name: album,            alias: al, expr: al.title,  type: string, description: Album title., synonyms: [albums] }
+  - { name: track,            alias: t,  expr: t.name,    type: string, description: Track name., synonyms: [tracks, song, songs] }
+  - { name: media_type,       alias: mt, expr: mt.name,   type: string, categorical: true, description: File format of the track., synonyms: [format, media type, media types] }
+  - { name: country,          alias: i,  expr: i.billing_country, type: string, categorical: true, description: Billing country of the invoice., synonyms: [countries, billing country, market, markets] }
+  - { name: customer,         alias: c,  expr: "c.first_name || ' ' || c.last_name", type: string, description: Customer full name., synonyms: [customers, client, clients] }
+  - { name: customer_country, alias: c,  expr: c.country, type: string, description: Country on the customer record., synonyms: [customer countries] }
+  - { name: support_rep,      alias: e,  expr: "e.first_name || ' ' || e.last_name", type: string, description: Sales support rep assigned to the customer., synonyms: [sales rep, support rep, rep, reps, employee, employees, support reps] }
+  - { name: year,    alias: i, expr: "CAST(EXTRACT(year FROM i.invoice_date) AS INTEGER)", type: time, description: Invoice year., synonyms: [years, "~yearly", "~annual", "~annually"] }
+  - { name: quarter, alias: i, expr: "CAST(EXTRACT(year FROM i.invoice_date) AS INTEGER) || '-Q' || CAST(EXTRACT(quarter FROM i.invoice_date) AS INTEGER)", type: time, description: Invoice quarter (YYYY-Qn)., synonyms: [quarters, "~quarterly"] }
+  - { name: month,   alias: i, expr: "strftime(i.invoice_date, '%Y-%m')", type: time, description: Invoice month (YYYY-MM)., synonyms: [months, "~monthly"] }
+
+# Few-shot examples, embedded in the vector store and retrieved per question.
+examples:
+  - question: What is our total revenue?
+    query: { metrics: [revenue] }
+  - question: Revenue by year
+    query: { metrics: [revenue], dimensions: [year] }
+  - question: Top 5 genres by units sold
+    query: { metrics: [units_sold], dimensions: [genre], limit: 5 }
+  - question: Which country spends the most?
+    query: { metrics: [revenue], dimensions: [country], limit: 1 }
+  - question: Revenue from Rock tracks in 2024
+    query:
+      metrics: [revenue]
+      filters: [{ dimension: genre, op: "=", value: Rock }, { dimension: year, op: "=", value: 2024 }]
+  - question: Monthly order count in 2023
+    query:
+      metrics: [order_count]
+      dimensions: [month]
+      filters: [{ dimension: year, op: "=", value: 2023 }]
