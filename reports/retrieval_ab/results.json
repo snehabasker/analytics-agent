@@ -1,0 +1,5131 @@
+{
+  "results": {
+    "hashing": {
+      "summary": {
+        "n": 34,
+        "grounded": 0.7352941176470589,
+        "latency_ms_p50": 9.256949939299375,
+        "latency_ms_mean": 10.242317642276998,
+        "metric": {
+          "n": 34,
+          "recall": 1.0,
+          "hit1": 0.7647058823529411,
+          "rr": 0.8823529411764706
+        },
+        "dimension": {
+          "n": 29,
+          "recall": 0.7586206896551724,
+          "hit1": 0.6551724137931034,
+          "rr": 0.7581977409563616
+        },
+        "value": {
+          "n": 7,
+          "recall": 0.8571428571428571,
+          "hit1": 0.8571428571428571,
+          "rr": 0.8571428571428571
+        },
+        "index_build_s": 0.15830970008391887
+      },
+      "cases": [
+        {
+          "id": "total_revenue",
+          "question": "What is our total revenue?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "avg_order_value",
+              "order_count",
+              "customer_count"
+            ]
+          }
+        },
+        {
+          "id": "customer_count",
+          "question": "How many customers are there?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "customer_count",
+              "order_count",
+              "units_sold",
+              "revenue"
+            ]
+          }
+        },
+        {
+          "id": "order_count",
+          "question": "How many orders have been placed?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "order_count",
+              "avg_order_value",
+              "customer_count",
+              "units_sold"
+            ]
+          }
+        },
+        {
+          "id": "units_total",
+          "question": "How many tracks were sold in total?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "units_sold",
+              "revenue",
+              "order_count",
+              "avg_order_value"
+            ]
+          }
+        },
+        {
+          "id": "aov_total",
+          "question": "What is the average order value?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "avg_order_value",
+              "order_count",
+              "customer_count",
+              "revenue"
+            ]
+          }
+        },
+        {
+          "id": "revenue_by_year",
+          "question": "Revenue by year",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "avg_order_value",
+              "customer_count",
+              "order_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "year",
+              "support_rep",
+              "media_type",
+              "customer_country"
+            ]
+          }
+        },
+        {
+          "id": "revenue_by_country",
+          "question": "Show revenue by country",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.5,
+            "top": [
+              "avg_order_value",
+              "revenue",
+              "order_count",
+              "customer_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "country",
+              "customer_country",
+              "support_rep",
+              "artist"
+            ]
+          }
+        },
+        {
+          "id": "units_by_genre",
+          "question": "Units sold by genre",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "units_sold",
+              "revenue",
+              "avg_order_value",
+              "customer_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "genre",
+              "track",
+              "media_type",
+              "customer"
+            ]
+          }
+        },
+        {
+          "id": "revenue_by_media_type",
+          "question": "Revenue per media type",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.5,
+            "top": [
+              "avg_order_value",
+              "revenue",
+              "customer_count",
+              "order_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "media_type",
+              "support_rep",
+              "artist",
+              "customer_country"
+            ]
+          }
+        },
+        {
+          "id": "revenue_by_rep",
+          "question": "Revenue by support rep",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.5,
+            "top": [
+              "avg_order_value",
+              "revenue",
+              "customer_count",
+              "units_sold"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "support_rep",
+              "media_type",
+              "artist",
+              "customer_country"
+            ]
+          }
+        },
+        {
+          "id": "aov_by_year",
+          "question": "Average order value by year",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "avg_order_value",
+              "order_count",
+              "customer_count",
+              "revenue"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "year",
+              "media_type",
+              "support_rep",
+              "customer"
+            ]
+          }
+        },
+        {
+          "id": "revenue_units_by_year",
+          "question": "Revenue and units sold per year",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "units_sold",
+              "avg_order_value",
+              "revenue",
+              "customer_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "year",
+              "support_rep",
+              "customer",
+              "artist"
+            ]
+          }
+        },
+        {
+          "id": "revenue_year_media",
+          "question": "Revenue by year and media type",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.5,
+            "top": [
+              "avg_order_value",
+              "revenue",
+              "customer_count",
+              "order_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "media_type",
+              "year",
+              "artist",
+              "support_rep"
+            ]
+          }
+        },
+        {
+          "id": "rock_2024",
+          "question": "Revenue from Rock tracks in 2024",
+          "grounded": false,
+          "missing": [
+            "year"
+          ],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.5,
+            "top": [
+              "units_sold",
+              "revenue",
+              "avg_order_value",
+              "customer_count"
+            ]
+          },
+          "dimension": {
+            "recall": 0.5,
+            "hit1": 0.0,
+            "rr": 0.5,
+            "top": [
+              "track",
+              "genre",
+              "media_type",
+              "customer"
+            ]
+          },
+          "value": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "genre=Rock",
+              "genre=Rock And Roll",
+              "artist=Black Sabbath",
+              "artist=Chicago Symphony Orchestra & Fritz Reiner"
+            ]
+          }
+        },
+        {
+          "id": "brazil_revenue",
+          "question": "What was the revenue in Brazil?",
+          "grounded": false,
+          "missing": [
+            "country"
+          ],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.5,
+            "top": [
+              "avg_order_value",
+              "revenue",
+              "order_count",
+              "units_sold"
+            ]
+          },
+          "dimension": {
+            "recall": 0.0,
+            "hit1": 0.0,
+            "rr": 0.14285714285714285,
+            "top": [
+              "genre",
+              "media_type",
+              "artist",
+              "month"
+            ]
+          },
+          "value": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "country=Brazil",
+              "artist=The Who",
+              "artist=The 12 Cellists of The Berlin Philharmonic",
+              "artist=The King's Singers"
+            ]
+          }
+        },
+        {
+          "id": "orders_2023",
+          "question": "How many orders were placed in 2023?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "order_count",
+              "avg_order_value",
+              "customer_count",
+              "units_sold"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.5,
+            "top": [
+              "quarter",
+              "year",
+              "country",
+              "month"
+            ]
+          }
+        },
+        {
+          "id": "usa_units_2025",
+          "question": "Units sold in the United States in 2025",
+          "grounded": false,
+          "missing": [
+            "country",
+            "year",
+            "country=USA"
+          ],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "units_sold",
+              "revenue",
+              "order_count",
+              "avg_order_value"
+            ]
+          },
+          "dimension": {
+            "recall": 0.0,
+            "hit1": 0.0,
+            "rr": 0.1111111111111111,
+            "top": [
+              "track",
+              "genre",
+              "media_type",
+              "month"
+            ]
+          },
+          "value": {
+            "recall": 0.0,
+            "hit1": 0.0,
+            "rr": 0.0,
+            "top": [
+              "country=United Kingdom",
+              "artist=The 12 Cellists of The Berlin Philharmonic",
+              "artist=The Rolling Stones",
+              "artist=Academy of St. Martin in the Fields, Sir Neville Marriner & Thurston Dart"
+            ]
+          }
+        },
+        {
+          "id": "revenue_since_2024",
+          "question": "Total revenue since 2024",
+          "grounded": false,
+          "missing": [
+            "year"
+          ],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "avg_order_value",
+              "customer_count",
+              "units_sold"
+            ]
+          },
+          "dimension": {
+            "recall": 0.0,
+            "hit1": 0.0,
+            "rr": 0.14285714285714285,
+            "top": [
+              "country",
+              "artist",
+              "month",
+              "quarter"
+            ]
+          }
+        },
+        {
+          "id": "revenue_between",
+          "question": "Revenue between 2022 and 2023",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "avg_order_value",
+              "customer_count",
+              "units_sold"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.5,
+            "top": [
+              "month",
+              "year",
+              "quarter",
+              "support_rep"
+            ]
+          }
+        },
+        {
+          "id": "jazz_by_year",
+          "question": "Jazz revenue by year",
+          "grounded": false,
+          "missing": [
+            "genre"
+          ],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "avg_order_value",
+              "customer_count",
+              "order_count"
+            ]
+          },
+          "dimension": {
+            "recall": 0.5,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "year",
+              "support_rep",
+              "media_type",
+              "customer_country"
+            ]
+          },
+          "value": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "genre=Jazz",
+              "artist=Kiss",
+              "artist=Chicago Symphony Orchestra & Fritz Reiner",
+              "artist=Michael Tilson Thomas & San Francisco Symphony"
+            ]
+          }
+        },
+        {
+          "id": "top5_genres_units",
+          "question": "Top 5 genres by units sold",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "units_sold",
+              "revenue",
+              "customer_count",
+              "avg_order_value"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "genre",
+              "track",
+              "customer",
+              "media_type"
+            ]
+          }
+        },
+        {
+          "id": "top3_customers",
+          "question": "Who are the top 3 customers by spend?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.5,
+            "top": [
+              "customer_count",
+              "revenue",
+              "order_count",
+              "avg_order_value"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "customer",
+              "customer_country",
+              "genre",
+              "support_rep"
+            ]
+          }
+        },
+        {
+          "id": "best_country",
+          "question": "Which country spends the most?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "customer_count",
+              "order_count",
+              "avg_order_value"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "country",
+              "customer_country",
+              "artist",
+              "genre"
+            ]
+          }
+        },
+        {
+          "id": "top10_artists",
+          "question": "Top 10 artists by revenue",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "avg_order_value",
+              "customer_count",
+              "units_sold"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "artist",
+              "media_type",
+              "customer",
+              "quarter"
+            ]
+          }
+        },
+        {
+          "id": "busiest_year",
+          "question": "Which year had the most orders?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "order_count",
+              "avg_order_value",
+              "customer_count",
+              "units_sold"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "year",
+              "artist",
+              "quarter",
+              "media_type"
+            ]
+          }
+        },
+        {
+          "id": "top_genre_in_germany",
+          "question": "What are the top 3 genres by revenue in Germany?",
+          "grounded": false,
+          "missing": [
+            "country"
+          ],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "avg_order_value",
+              "order_count",
+              "customer_count"
+            ]
+          },
+          "dimension": {
+            "recall": 0.5,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "genre",
+              "media_type",
+              "support_rep",
+              "customer_country"
+            ]
+          },
+          "value": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "country=Germany",
+              "genre=Comedy",
+              "genre=Pop",
+              "genre=Latin"
+            ]
+          }
+        },
+        {
+          "id": "monthly_orders_2023",
+          "question": "Monthly order count in 2023",
+          "grounded": false,
+          "missing": [
+            "year"
+          ],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.5,
+            "top": [
+              "avg_order_value",
+              "order_count",
+              "customer_count",
+              "revenue"
+            ]
+          },
+          "dimension": {
+            "recall": 0.5,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "month",
+              "country",
+              "customer_country",
+              "quarter"
+            ]
+          }
+        },
+        {
+          "id": "quarterly_revenue_2024",
+          "question": "Quarterly revenue in 2024",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "avg_order_value",
+              "units_sold",
+              "order_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "quarter",
+              "month",
+              "artist",
+              "year"
+            ]
+          }
+        },
+        {
+          "id": "benign_list",
+          "question": "List the top 3 genres by revenue",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "avg_order_value",
+              "units_sold",
+              "customer_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "genre",
+              "support_rep",
+              "media_type",
+              "customer_country"
+            ]
+          }
+        },
+        {
+          "id": "benign_show",
+          "question": "Show me total sales for Canada",
+          "grounded": false,
+          "missing": [
+            "country"
+          ],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "order_count",
+              "avg_order_value",
+              "units_sold"
+            ]
+          },
+          "dimension": {
+            "recall": 0.0,
+            "hit1": 0.0,
+            "rr": 0.09090909090909091,
+            "top": [
+              "media_type",
+              "support_rep",
+              "genre",
+              "year"
+            ]
+          },
+          "value": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "country=Canada",
+              "genre=Metal",
+              "genre=TV Shows",
+              "artist=Metallica"
+            ]
+          }
+        },
+        {
+          "id": "hard_having",
+          "question": "Which genres earned more than $100 in revenue?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "avg_order_value",
+              "units_sold",
+              "order_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "genre",
+              "support_rep",
+              "month",
+              "year"
+            ]
+          }
+        },
+        {
+          "id": "hard_share",
+          "question": "What share of total revenue comes from Rock?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "avg_order_value",
+              "customer_count",
+              "order_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.3333333333333333,
+            "top": [
+              "customer_country",
+              "media_type",
+              "genre",
+              "customer"
+            ]
+          },
+          "value": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "genre=Rock",
+              "genre=Rock And Roll",
+              "genre=Comedy",
+              "artist=English Concert & Trevor Pinnock"
+            ]
+          }
+        },
+        {
+          "id": "hard_compare_years",
+          "question": "Compare revenue in 2024 versus 2023",
+          "grounded": false,
+          "missing": [
+            "year"
+          ],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "avg_order_value",
+              "customer_count",
+              "order_count"
+            ]
+          },
+          "dimension": {
+            "recall": 0.0,
+            "hit1": 0.0,
+            "rr": 0.16666666666666666,
+            "top": [
+              "country",
+              "support_rep",
+              "quarter",
+              "month"
+            ]
+          }
+        },
+        {
+          "id": "hard_every_year",
+          "question": "How many customers made a purchase in every year of data?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "customer_count",
+              "order_count",
+              "units_sold",
+              "revenue"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.5,
+            "top": [
+              "customer",
+              "year",
+              "customer_country",
+              "country"
+            ]
+          }
+        }
+      ]
+    },
+    "hashing_rerank": {
+      "summary": {
+        "n": 34,
+        "grounded": 0.9117647058823529,
+        "latency_ms_p50": 294.74059998756275,
+        "latency_ms_mean": 5901.4594853027065,
+        "metric": {
+          "n": 34,
+          "recall": 1.0,
+          "hit1": 0.9117647058823529,
+          "rr": 0.9558823529411765
+        },
+        "dimension": {
+          "n": 29,
+          "recall": 0.9482758620689655,
+          "hit1": 0.7931034482758621,
+          "rr": 0.8850574712643678
+        },
+        "value": {
+          "n": 7,
+          "recall": 0.7142857142857143,
+          "hit1": 0.7142857142857143,
+          "rr": 0.7202380952380952
+        },
+        "reranker_api_calls": 34,
+        "index_build_s": 0.7312162998132408
+      },
+      "cases": [
+        {
+          "id": "total_revenue",
+          "question": "What is our total revenue?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "units_sold",
+              "avg_order_value",
+              "customer_count"
+            ]
+          }
+        },
+        {
+          "id": "customer_count",
+          "question": "How many customers are there?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "customer_count",
+              "order_count",
+              "units_sold",
+              "revenue"
+            ]
+          }
+        },
+        {
+          "id": "order_count",
+          "question": "How many orders have been placed?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "order_count",
+              "customer_count",
+              "avg_order_value",
+              "units_sold"
+            ]
+          }
+        },
+        {
+          "id": "units_total",
+          "question": "How many tracks were sold in total?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "units_sold",
+              "revenue",
+              "order_count",
+              "customer_count"
+            ]
+          }
+        },
+        {
+          "id": "aov_total",
+          "question": "What is the average order value?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "avg_order_value",
+              "order_count",
+              "revenue",
+              "customer_count"
+            ]
+          }
+        },
+        {
+          "id": "revenue_by_year",
+          "question": "Revenue by year",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "units_sold",
+              "avg_order_value",
+              "customer_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "year",
+              "quarter",
+              "month",
+              "artist"
+            ]
+          }
+        },
+        {
+          "id": "revenue_by_country",
+          "question": "Show revenue by country",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "units_sold",
+              "avg_order_value",
+              "customer_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.5,
+            "top": [
+              "customer_country",
+              "country",
+              "year",
+              "quarter"
+            ]
+          }
+        },
+        {
+          "id": "units_by_genre",
+          "question": "Units sold by genre",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "units_sold",
+              "revenue",
+              "order_count",
+              "customer_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "genre",
+              "album",
+              "artist",
+              "track"
+            ]
+          }
+        },
+        {
+          "id": "revenue_by_media_type",
+          "question": "Revenue per media type",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "units_sold",
+              "avg_order_value",
+              "customer_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "media_type",
+              "artist",
+              "year",
+              "genre"
+            ]
+          }
+        },
+        {
+          "id": "revenue_by_rep",
+          "question": "Revenue by support rep",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "avg_order_value",
+              "customer_count",
+              "units_sold"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "support_rep",
+              "customer",
+              "customer_country",
+              "quarter"
+            ]
+          }
+        },
+        {
+          "id": "aov_by_year",
+          "question": "Average order value by year",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "avg_order_value",
+              "order_count",
+              "revenue",
+              "customer_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "year",
+              "customer_country",
+              "month",
+              "customer"
+            ]
+          }
+        },
+        {
+          "id": "revenue_units_by_year",
+          "question": "Revenue and units sold per year",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "units_sold",
+              "customer_count",
+              "avg_order_value"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "year",
+              "quarter",
+              "customer_country",
+              "customer"
+            ]
+          }
+        },
+        {
+          "id": "revenue_year_media",
+          "question": "Revenue by year and media type",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "units_sold",
+              "customer_count",
+              "order_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "media_type",
+              "year",
+              "artist",
+              "genre"
+            ]
+          }
+        },
+        {
+          "id": "rock_2024",
+          "question": "Revenue from Rock tracks in 2024",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.5,
+            "top": [
+              "units_sold",
+              "revenue",
+              "customer_count",
+              "order_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "year",
+              "genre",
+              "artist",
+              "track"
+            ]
+          },
+          "value": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "genre=Rock",
+              "genre=Rock And Roll",
+              "genre=Soundtrack",
+              "genre=Comedy"
+            ]
+          }
+        },
+        {
+          "id": "brazil_revenue",
+          "question": "What was the revenue in Brazil?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "units_sold",
+              "avg_order_value",
+              "customer_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "country",
+              "customer_country",
+              "year",
+              "quarter"
+            ]
+          },
+          "value": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "country=Brazil",
+              "artist=Led Zeppelin",
+              "artist=Alice In Chains",
+              "artist=The Who"
+            ]
+          }
+        },
+        {
+          "id": "orders_2023",
+          "question": "How many orders were placed in 2023?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "order_count",
+              "customer_count",
+              "avg_order_value",
+              "units_sold"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.3333333333333333,
+            "top": [
+              "customer",
+              "month",
+              "year",
+              "customer_country"
+            ]
+          }
+        },
+        {
+          "id": "usa_units_2025",
+          "question": "Units sold in the United States in 2025",
+          "grounded": false,
+          "missing": [
+            "country",
+            "country=USA"
+          ],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "units_sold",
+              "revenue",
+              "customer_count",
+              "avg_order_value"
+            ]
+          },
+          "dimension": {
+            "recall": 0.5,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "year",
+              "customer_country",
+              "support_rep",
+              "customer"
+            ]
+          },
+          "value": {
+            "recall": 0.0,
+            "hit1": 0.0,
+            "rr": 0.0,
+            "top": [
+              "country=United Kingdom",
+              "genre=Electronica/Dance",
+              "artist=Red Hot Chili Peppers",
+              "artist=The Doors"
+            ]
+          }
+        },
+        {
+          "id": "revenue_since_2024",
+          "question": "Total revenue since 2024",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "units_sold",
+              "customer_count",
+              "order_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "year",
+              "quarter",
+              "month",
+              "artist"
+            ]
+          }
+        },
+        {
+          "id": "revenue_between",
+          "question": "Revenue between 2022 and 2023",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "units_sold",
+              "avg_order_value",
+              "order_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.3333333333333333,
+            "top": [
+              "quarter",
+              "month",
+              "year",
+              "artist"
+            ]
+          }
+        },
+        {
+          "id": "jazz_by_year",
+          "question": "Jazz revenue by year",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.5,
+            "top": [
+              "units_sold",
+              "revenue",
+              "customer_count",
+              "order_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "year",
+              "artist",
+              "quarter",
+              "genre"
+            ]
+          },
+          "value": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "genre=Jazz",
+              "artist=Kiss",
+              "artist=Creedence Clearwater Revival",
+              "artist=Aerosmith"
+            ]
+          }
+        },
+        {
+          "id": "top5_genres_units",
+          "question": "Top 5 genres by units sold",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "units_sold",
+              "revenue",
+              "order_count",
+              "customer_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "genre",
+              "album",
+              "artist",
+              "track"
+            ]
+          }
+        },
+        {
+          "id": "top3_customers",
+          "question": "Who are the top 3 customers by spend?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "customer_count",
+              "order_count",
+              "avg_order_value"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "customer",
+              "customer_country",
+              "year",
+              "month"
+            ]
+          }
+        },
+        {
+          "id": "best_country",
+          "question": "Which country spends the most?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "customer_count",
+              "avg_order_value",
+              "order_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.5,
+            "top": [
+              "customer_country",
+              "country",
+              "artist",
+              "genre"
+            ]
+          }
+        },
+        {
+          "id": "top10_artists",
+          "question": "Top 10 artists by revenue",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.5,
+            "top": [
+              "units_sold",
+              "revenue",
+              "customer_count",
+              "avg_order_value"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "artist",
+              "album",
+              "genre",
+              "track"
+            ]
+          }
+        },
+        {
+          "id": "busiest_year",
+          "question": "Which year had the most orders?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "order_count",
+              "avg_order_value",
+              "customer_count",
+              "revenue"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "year",
+              "customer_country",
+              "month",
+              "quarter"
+            ]
+          }
+        },
+        {
+          "id": "top_genre_in_germany",
+          "question": "What are the top 3 genres by revenue in Germany?",
+          "grounded": false,
+          "missing": [
+            "country",
+            "country=Germany"
+          ],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "units_sold",
+              "avg_order_value",
+              "customer_count"
+            ]
+          },
+          "dimension": {
+            "recall": 0.5,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "genre",
+              "artist",
+              "album",
+              "track"
+            ]
+          },
+          "value": {
+            "recall": 0.0,
+            "hit1": 0.0,
+            "rr": 0.041666666666666664,
+            "top": [
+              "genre=Electronica/Dance",
+              "genre=Sci Fi & Fantasy",
+              "genre=Comedy",
+              "genre=Drama"
+            ]
+          }
+        },
+        {
+          "id": "monthly_orders_2023",
+          "question": "Monthly order count in 2023",
+          "grounded": false,
+          "missing": [
+            "year"
+          ],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "order_count",
+              "avg_order_value",
+              "customer_count",
+              "revenue"
+            ]
+          },
+          "dimension": {
+            "recall": 0.5,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "month",
+              "customer",
+              "customer_country",
+              "quarter"
+            ]
+          }
+        },
+        {
+          "id": "quarterly_revenue_2024",
+          "question": "Quarterly revenue in 2024",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "units_sold",
+              "customer_count",
+              "order_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "quarter",
+              "artist",
+              "year",
+              "support_rep"
+            ]
+          }
+        },
+        {
+          "id": "benign_list",
+          "question": "List the top 3 genres by revenue",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "units_sold",
+              "avg_order_value",
+              "customer_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "genre",
+              "artist",
+              "album",
+              "track"
+            ]
+          }
+        },
+        {
+          "id": "benign_show",
+          "question": "Show me total sales for Canada",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "units_sold",
+              "customer_count",
+              "order_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.5,
+            "top": [
+              "customer_country",
+              "country",
+              "customer",
+              "year"
+            ]
+          },
+          "value": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "country=Canada",
+              "genre=Heavy Metal",
+              "genre=Pop",
+              "genre=Metal"
+            ]
+          }
+        },
+        {
+          "id": "hard_having",
+          "question": "Which genres earned more than $100 in revenue?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "units_sold",
+              "avg_order_value",
+              "customer_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "genre",
+              "artist",
+              "album",
+              "track"
+            ]
+          }
+        },
+        {
+          "id": "hard_share",
+          "question": "What share of total revenue comes from Rock?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "units_sold",
+              "customer_count",
+              "order_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.5,
+            "top": [
+              "artist",
+              "genre",
+              "album",
+              "customer"
+            ]
+          },
+          "value": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "genre=Rock",
+              "genre=Rock And Roll",
+              "genre=Metal",
+              "genre=Pop"
+            ]
+          }
+        },
+        {
+          "id": "hard_compare_years",
+          "question": "Compare revenue in 2024 versus 2023",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "units_sold",
+              "avg_order_value",
+              "customer_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "year",
+              "quarter",
+              "month",
+              "artist"
+            ]
+          }
+        },
+        {
+          "id": "hard_every_year",
+          "question": "How many customers made a purchase in every year of data?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "customer_count",
+              "order_count",
+              "avg_order_value",
+              "revenue"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "year",
+              "customer",
+              "customer_country",
+              "quarter"
+            ]
+          }
+        }
+      ]
+    },
+    "cohere_embed": {
+      "summary": {
+        "n": 34,
+        "grounded": 0.9705882352941176,
+        "latency_ms_p50": 360.25469994638115,
+        "latency_ms_mean": 416.07227940660187,
+        "metric": {
+          "n": 34,
+          "recall": 1.0,
+          "hit1": 0.8823529411764706,
+          "rr": 0.9411764705882353
+        },
+        "dimension": {
+          "n": 29,
+          "recall": 0.9827586206896551,
+          "hit1": 0.8275862068965517,
+          "rr": 0.9080459770114943
+        },
+        "value": {
+          "n": 7,
+          "recall": 1.0,
+          "hit1": 1.0,
+          "rr": 1.0
+        },
+        "embedder_api_calls": 37,
+        "index_build_s": 6.13384650007356
+      },
+      "cases": [
+        {
+          "id": "total_revenue",
+          "question": "What is our total revenue?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "avg_order_value",
+              "customer_count",
+              "order_count"
+            ]
+          }
+        },
+        {
+          "id": "customer_count",
+          "question": "How many customers are there?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "customer_count",
+              "order_count",
+              "avg_order_value",
+              "units_sold"
+            ]
+          }
+        },
+        {
+          "id": "order_count",
+          "question": "How many orders have been placed?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "order_count",
+              "avg_order_value",
+              "customer_count",
+              "units_sold"
+            ]
+          }
+        },
+        {
+          "id": "units_total",
+          "question": "How many tracks were sold in total?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "units_sold",
+              "revenue",
+              "order_count",
+              "avg_order_value"
+            ]
+          }
+        },
+        {
+          "id": "aov_total",
+          "question": "What is the average order value?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "avg_order_value",
+              "order_count",
+              "customer_count",
+              "revenue"
+            ]
+          }
+        },
+        {
+          "id": "revenue_by_year",
+          "question": "Revenue by year",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "avg_order_value",
+              "customer_count",
+              "units_sold"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "year",
+              "quarter",
+              "month",
+              "support_rep"
+            ]
+          }
+        },
+        {
+          "id": "revenue_by_country",
+          "question": "Show revenue by country",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "avg_order_value",
+              "units_sold",
+              "customer_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "country",
+              "customer_country",
+              "quarter",
+              "support_rep"
+            ]
+          }
+        },
+        {
+          "id": "units_by_genre",
+          "question": "Units sold by genre",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "units_sold",
+              "revenue",
+              "order_count",
+              "customer_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "genre",
+              "album",
+              "media_type",
+              "support_rep"
+            ]
+          }
+        },
+        {
+          "id": "revenue_by_media_type",
+          "question": "Revenue per media type",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.5,
+            "top": [
+              "avg_order_value",
+              "revenue",
+              "units_sold",
+              "customer_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "media_type",
+              "year",
+              "genre",
+              "album"
+            ]
+          }
+        },
+        {
+          "id": "revenue_by_rep",
+          "question": "Revenue by support rep",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.5,
+            "top": [
+              "avg_order_value",
+              "revenue",
+              "customer_count",
+              "units_sold"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "support_rep",
+              "customer",
+              "customer_country",
+              "month"
+            ]
+          }
+        },
+        {
+          "id": "aov_by_year",
+          "question": "Average order value by year",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "avg_order_value",
+              "order_count",
+              "customer_count",
+              "revenue"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "year",
+              "month",
+              "quarter",
+              "customer"
+            ]
+          }
+        },
+        {
+          "id": "revenue_units_by_year",
+          "question": "Revenue and units sold per year",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "units_sold",
+              "revenue",
+              "avg_order_value",
+              "order_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "year",
+              "quarter",
+              "month",
+              "support_rep"
+            ]
+          }
+        },
+        {
+          "id": "revenue_year_media",
+          "question": "Revenue by year and media type",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "avg_order_value",
+              "units_sold",
+              "customer_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "media_type",
+              "year",
+              "quarter",
+              "month"
+            ]
+          }
+        },
+        {
+          "id": "rock_2024",
+          "question": "Revenue from Rock tracks in 2024",
+          "grounded": false,
+          "missing": [
+            "year"
+          ],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.5,
+            "top": [
+              "units_sold",
+              "revenue",
+              "avg_order_value",
+              "customer_count"
+            ]
+          },
+          "dimension": {
+            "recall": 0.5,
+            "hit1": 0.0,
+            "rr": 0.5,
+            "top": [
+              "track",
+              "genre",
+              "media_type",
+              "quarter"
+            ]
+          },
+          "value": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "genre=Rock",
+              "genre=Rock And Roll",
+              "artist=The Rolling Stones",
+              "artist=Guns N' Roses"
+            ]
+          }
+        },
+        {
+          "id": "brazil_revenue",
+          "question": "What was the revenue in Brazil?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "avg_order_value",
+              "units_sold",
+              "order_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "country",
+              "customer_country",
+              "support_rep",
+              "month"
+            ]
+          },
+          "value": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "country=Brazil",
+              "country=Portugal",
+              "country=Argentina",
+              "artist=Caetano Veloso"
+            ]
+          }
+        },
+        {
+          "id": "orders_2023",
+          "question": "How many orders were placed in 2023?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "order_count",
+              "avg_order_value",
+              "customer_count",
+              "units_sold"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.3333333333333333,
+            "top": [
+              "month",
+              "quarter",
+              "year",
+              "customer"
+            ]
+          }
+        },
+        {
+          "id": "usa_units_2025",
+          "question": "Units sold in the United States in 2025",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "units_sold",
+              "revenue",
+              "customer_count",
+              "order_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "country",
+              "support_rep",
+              "quarter",
+              "year"
+            ]
+          },
+          "value": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "country=USA",
+              "artist=Legi\u00e3o Urbana",
+              "country=United Kingdom",
+              "artist=Chico Science & Na\u00e7\u00e3o Zumbi"
+            ]
+          }
+        },
+        {
+          "id": "revenue_since_2024",
+          "question": "Total revenue since 2024",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "avg_order_value",
+              "customer_count",
+              "order_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.5,
+            "top": [
+              "quarter",
+              "year",
+              "month",
+              "support_rep"
+            ]
+          }
+        },
+        {
+          "id": "revenue_between",
+          "question": "Revenue between 2022 and 2023",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "avg_order_value",
+              "customer_count",
+              "units_sold"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "year",
+              "month",
+              "quarter",
+              "support_rep"
+            ]
+          }
+        },
+        {
+          "id": "jazz_by_year",
+          "question": "Jazz revenue by year",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "avg_order_value",
+              "units_sold",
+              "customer_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "year",
+              "month",
+              "quarter",
+              "genre"
+            ]
+          },
+          "value": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "genre=Jazz",
+              "artist=Miles Davis",
+              "artist=Pearl Jam",
+              "genre=Rock And Roll"
+            ]
+          }
+        },
+        {
+          "id": "top5_genres_units",
+          "question": "Top 5 genres by units sold",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "units_sold",
+              "revenue",
+              "avg_order_value",
+              "order_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "genre",
+              "media_type",
+              "album",
+              "artist"
+            ]
+          }
+        },
+        {
+          "id": "top3_customers",
+          "question": "Who are the top 3 customers by spend?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.5,
+            "top": [
+              "customer_count",
+              "revenue",
+              "avg_order_value",
+              "order_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "customer",
+              "support_rep",
+              "customer_country",
+              "month"
+            ]
+          }
+        },
+        {
+          "id": "best_country",
+          "question": "Which country spends the most?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "units_sold",
+              "avg_order_value",
+              "customer_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "country",
+              "customer_country",
+              "customer",
+              "quarter"
+            ]
+          }
+        },
+        {
+          "id": "top10_artists",
+          "question": "Top 10 artists by revenue",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "avg_order_value",
+              "units_sold",
+              "customer_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "artist",
+              "support_rep",
+              "quarter",
+              "genre"
+            ]
+          }
+        },
+        {
+          "id": "busiest_year",
+          "question": "Which year had the most orders?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "order_count",
+              "avg_order_value",
+              "customer_count",
+              "units_sold"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "year",
+              "month",
+              "quarter",
+              "customer"
+            ]
+          }
+        },
+        {
+          "id": "top_genre_in_germany",
+          "question": "What are the top 3 genres by revenue in Germany?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "avg_order_value",
+              "units_sold",
+              "order_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "genre",
+              "country",
+              "media_type",
+              "album"
+            ]
+          },
+          "value": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "country=Germany",
+              "genre=Electronica/Dance",
+              "genre=World",
+              "genre=Pop"
+            ]
+          }
+        },
+        {
+          "id": "monthly_orders_2023",
+          "question": "Monthly order count in 2023",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "order_count",
+              "avg_order_value",
+              "customer_count",
+              "units_sold"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "month",
+              "quarter",
+              "year",
+              "country"
+            ]
+          }
+        },
+        {
+          "id": "quarterly_revenue_2024",
+          "question": "Quarterly revenue in 2024",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "avg_order_value",
+              "units_sold",
+              "customer_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "quarter",
+              "year",
+              "month",
+              "country"
+            ]
+          }
+        },
+        {
+          "id": "benign_list",
+          "question": "List the top 3 genres by revenue",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "avg_order_value",
+              "units_sold",
+              "order_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "genre",
+              "quarter",
+              "media_type",
+              "support_rep"
+            ]
+          }
+        },
+        {
+          "id": "benign_show",
+          "question": "Show me total sales for Canada",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "units_sold",
+              "order_count",
+              "avg_order_value"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "country",
+              "customer_country",
+              "support_rep",
+              "customer"
+            ]
+          },
+          "value": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "country=Canada",
+              "country=Netherlands",
+              "country=United Kingdom",
+              "country=Argentina"
+            ]
+          }
+        },
+        {
+          "id": "hard_having",
+          "question": "Which genres earned more than $100 in revenue?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "avg_order_value",
+              "units_sold",
+              "order_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "genre",
+              "quarter",
+              "year",
+              "artist"
+            ]
+          }
+        },
+        {
+          "id": "hard_share",
+          "question": "What share of total revenue comes from Rock?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "avg_order_value",
+              "units_sold",
+              "customer_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "genre",
+              "media_type",
+              "album",
+              "track"
+            ]
+          },
+          "value": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "genre=Rock",
+              "genre=Rock And Roll",
+              "genre=Heavy Metal",
+              "genre=Alternative & Punk"
+            ]
+          }
+        },
+        {
+          "id": "hard_compare_years",
+          "question": "Compare revenue in 2024 versus 2023",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "avg_order_value",
+              "order_count",
+              "customer_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.5,
+            "top": [
+              "quarter",
+              "year",
+              "month",
+              "country"
+            ]
+          }
+        },
+        {
+          "id": "hard_every_year",
+          "question": "How many customers made a purchase in every year of data?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "customer_count",
+              "order_count",
+              "avg_order_value",
+              "revenue"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.5,
+            "top": [
+              "customer",
+              "year",
+              "customer_country",
+              "support_rep"
+            ]
+          }
+        }
+      ]
+    },
+    "cohere_embed_rerank": {
+      "summary": {
+        "n": 34,
+        "grounded": 0.9117647058823529,
+        "latency_ms_p50": 652.4113499908708,
+        "latency_ms_mean": 6243.651929403902,
+        "metric": {
+          "n": 34,
+          "recall": 1.0,
+          "hit1": 0.9117647058823529,
+          "rr": 0.9558823529411765
+        },
+        "dimension": {
+          "n": 29,
+          "recall": 0.9482758620689655,
+          "hit1": 0.7931034482758621,
+          "rr": 0.8850574712643678
+        },
+        "value": {
+          "n": 7,
+          "recall": 0.8571428571428571,
+          "hit1": 0.8571428571428571,
+          "rr": 0.8628571428571429
+        },
+        "embedder_api_calls": 37,
+        "reranker_api_calls": 34,
+        "index_build_s": 7.776528600254096
+      },
+      "cases": [
+        {
+          "id": "total_revenue",
+          "question": "What is our total revenue?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "units_sold",
+              "avg_order_value",
+              "customer_count"
+            ]
+          }
+        },
+        {
+          "id": "customer_count",
+          "question": "How many customers are there?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "customer_count",
+              "order_count",
+              "units_sold",
+              "revenue"
+            ]
+          }
+        },
+        {
+          "id": "order_count",
+          "question": "How many orders have been placed?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "order_count",
+              "customer_count",
+              "avg_order_value",
+              "units_sold"
+            ]
+          }
+        },
+        {
+          "id": "units_total",
+          "question": "How many tracks were sold in total?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "units_sold",
+              "revenue",
+              "order_count",
+              "customer_count"
+            ]
+          }
+        },
+        {
+          "id": "aov_total",
+          "question": "What is the average order value?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "avg_order_value",
+              "order_count",
+              "revenue",
+              "customer_count"
+            ]
+          }
+        },
+        {
+          "id": "revenue_by_year",
+          "question": "Revenue by year",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "units_sold",
+              "avg_order_value",
+              "customer_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "year",
+              "quarter",
+              "month",
+              "artist"
+            ]
+          }
+        },
+        {
+          "id": "revenue_by_country",
+          "question": "Show revenue by country",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "units_sold",
+              "avg_order_value",
+              "customer_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.5,
+            "top": [
+              "customer_country",
+              "country",
+              "year",
+              "quarter"
+            ]
+          }
+        },
+        {
+          "id": "units_by_genre",
+          "question": "Units sold by genre",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "units_sold",
+              "revenue",
+              "order_count",
+              "customer_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "genre",
+              "album",
+              "artist",
+              "track"
+            ]
+          }
+        },
+        {
+          "id": "revenue_by_media_type",
+          "question": "Revenue per media type",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "units_sold",
+              "avg_order_value",
+              "customer_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "media_type",
+              "artist",
+              "year",
+              "genre"
+            ]
+          }
+        },
+        {
+          "id": "revenue_by_rep",
+          "question": "Revenue by support rep",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "avg_order_value",
+              "customer_count",
+              "units_sold"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "support_rep",
+              "customer",
+              "customer_country",
+              "quarter"
+            ]
+          }
+        },
+        {
+          "id": "aov_by_year",
+          "question": "Average order value by year",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "avg_order_value",
+              "order_count",
+              "revenue",
+              "customer_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "year",
+              "customer_country",
+              "month",
+              "customer"
+            ]
+          }
+        },
+        {
+          "id": "revenue_units_by_year",
+          "question": "Revenue and units sold per year",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "units_sold",
+              "customer_count",
+              "avg_order_value"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "year",
+              "quarter",
+              "customer_country",
+              "customer"
+            ]
+          }
+        },
+        {
+          "id": "revenue_year_media",
+          "question": "Revenue by year and media type",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "units_sold",
+              "customer_count",
+              "order_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "media_type",
+              "year",
+              "artist",
+              "genre"
+            ]
+          }
+        },
+        {
+          "id": "rock_2024",
+          "question": "Revenue from Rock tracks in 2024",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.5,
+            "top": [
+              "units_sold",
+              "revenue",
+              "customer_count",
+              "order_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "year",
+              "genre",
+              "artist",
+              "track"
+            ]
+          },
+          "value": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "genre=Rock",
+              "genre=Metal",
+              "genre=Rock And Roll",
+              "genre=Heavy Metal"
+            ]
+          }
+        },
+        {
+          "id": "brazil_revenue",
+          "question": "What was the revenue in Brazil?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "units_sold",
+              "avg_order_value",
+              "customer_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "country",
+              "customer_country",
+              "year",
+              "quarter"
+            ]
+          },
+          "value": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "country=Brazil",
+              "country=Argentina",
+              "country=Chile",
+              "country=USA"
+            ]
+          }
+        },
+        {
+          "id": "orders_2023",
+          "question": "How many orders were placed in 2023?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "order_count",
+              "customer_count",
+              "avg_order_value",
+              "units_sold"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.3333333333333333,
+            "top": [
+              "customer",
+              "month",
+              "year",
+              "customer_country"
+            ]
+          }
+        },
+        {
+          "id": "usa_units_2025",
+          "question": "Units sold in the United States in 2025",
+          "grounded": false,
+          "missing": [
+            "country"
+          ],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "units_sold",
+              "revenue",
+              "customer_count",
+              "avg_order_value"
+            ]
+          },
+          "dimension": {
+            "recall": 0.5,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "year",
+              "customer_country",
+              "support_rep",
+              "customer"
+            ]
+          },
+          "value": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "country=USA",
+              "country=United Kingdom",
+              "country=Australia",
+              "country=Brazil"
+            ]
+          }
+        },
+        {
+          "id": "revenue_since_2024",
+          "question": "Total revenue since 2024",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "units_sold",
+              "customer_count",
+              "order_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "year",
+              "quarter",
+              "month",
+              "artist"
+            ]
+          }
+        },
+        {
+          "id": "revenue_between",
+          "question": "Revenue between 2022 and 2023",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "units_sold",
+              "avg_order_value",
+              "order_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.3333333333333333,
+            "top": [
+              "quarter",
+              "month",
+              "year",
+              "artist"
+            ]
+          }
+        },
+        {
+          "id": "jazz_by_year",
+          "question": "Jazz revenue by year",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.5,
+            "top": [
+              "units_sold",
+              "revenue",
+              "customer_count",
+              "order_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "year",
+              "artist",
+              "quarter",
+              "genre"
+            ]
+          },
+          "value": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "genre=Jazz",
+              "artist=Miles Davis",
+              "genre=Blues",
+              "genre=Rock"
+            ]
+          }
+        },
+        {
+          "id": "top5_genres_units",
+          "question": "Top 5 genres by units sold",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "units_sold",
+              "revenue",
+              "order_count",
+              "customer_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "genre",
+              "album",
+              "artist",
+              "track"
+            ]
+          }
+        },
+        {
+          "id": "top3_customers",
+          "question": "Who are the top 3 customers by spend?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "customer_count",
+              "order_count",
+              "avg_order_value"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "customer",
+              "customer_country",
+              "year",
+              "month"
+            ]
+          }
+        },
+        {
+          "id": "best_country",
+          "question": "Which country spends the most?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "customer_count",
+              "avg_order_value",
+              "order_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.5,
+            "top": [
+              "customer_country",
+              "country",
+              "artist",
+              "genre"
+            ]
+          }
+        },
+        {
+          "id": "top10_artists",
+          "question": "Top 10 artists by revenue",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.5,
+            "top": [
+              "units_sold",
+              "revenue",
+              "customer_count",
+              "avg_order_value"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "artist",
+              "album",
+              "genre",
+              "track"
+            ]
+          }
+        },
+        {
+          "id": "busiest_year",
+          "question": "Which year had the most orders?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "order_count",
+              "avg_order_value",
+              "customer_count",
+              "revenue"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "year",
+              "customer_country",
+              "month",
+              "quarter"
+            ]
+          }
+        },
+        {
+          "id": "top_genre_in_germany",
+          "question": "What are the top 3 genres by revenue in Germany?",
+          "grounded": false,
+          "missing": [
+            "country",
+            "country=Germany"
+          ],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "units_sold",
+              "avg_order_value",
+              "customer_count"
+            ]
+          },
+          "dimension": {
+            "recall": 0.5,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "genre",
+              "artist",
+              "album",
+              "track"
+            ]
+          },
+          "value": {
+            "recall": 0.0,
+            "hit1": 0.0,
+            "rr": 0.04,
+            "top": [
+              "genre=Electronica/Dance",
+              "genre=Sci Fi & Fantasy",
+              "genre=Comedy",
+              "genre=Alternative & Punk"
+            ]
+          }
+        },
+        {
+          "id": "monthly_orders_2023",
+          "question": "Monthly order count in 2023",
+          "grounded": false,
+          "missing": [
+            "year"
+          ],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "order_count",
+              "avg_order_value",
+              "customer_count",
+              "revenue"
+            ]
+          },
+          "dimension": {
+            "recall": 0.5,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "month",
+              "customer",
+              "customer_country",
+              "quarter"
+            ]
+          }
+        },
+        {
+          "id": "quarterly_revenue_2024",
+          "question": "Quarterly revenue in 2024",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "units_sold",
+              "customer_count",
+              "order_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "quarter",
+              "artist",
+              "year",
+              "support_rep"
+            ]
+          }
+        },
+        {
+          "id": "benign_list",
+          "question": "List the top 3 genres by revenue",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "units_sold",
+              "avg_order_value",
+              "customer_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "genre",
+              "artist",
+              "album",
+              "track"
+            ]
+          }
+        },
+        {
+          "id": "benign_show",
+          "question": "Show me total sales for Canada",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "units_sold",
+              "customer_count",
+              "order_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.5,
+            "top": [
+              "customer_country",
+              "country",
+              "customer",
+              "year"
+            ]
+          },
+          "value": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "country=Canada",
+              "country=USA",
+              "country=Australia",
+              "country=Germany"
+            ]
+          }
+        },
+        {
+          "id": "hard_having",
+          "question": "Which genres earned more than $100 in revenue?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "units_sold",
+              "avg_order_value",
+              "customer_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "genre",
+              "artist",
+              "album",
+              "track"
+            ]
+          }
+        },
+        {
+          "id": "hard_share",
+          "question": "What share of total revenue comes from Rock?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "units_sold",
+              "customer_count",
+              "order_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.5,
+            "top": [
+              "artist",
+              "genre",
+              "album",
+              "customer"
+            ]
+          },
+          "value": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "genre=Rock",
+              "genre=Rock And Roll",
+              "genre=Metal",
+              "genre=Pop"
+            ]
+          }
+        },
+        {
+          "id": "hard_compare_years",
+          "question": "Compare revenue in 2024 versus 2023",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "units_sold",
+              "avg_order_value",
+              "customer_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "year",
+              "quarter",
+              "month",
+              "artist"
+            ]
+          }
+        },
+        {
+          "id": "hard_every_year",
+          "question": "How many customers made a purchase in every year of data?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "customer_count",
+              "order_count",
+              "avg_order_value",
+              "revenue"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "year",
+              "customer",
+              "customer_country",
+              "quarter"
+            ]
+          }
+        }
+      ]
+    },
+    "random": {
+      "summary": {
+        "n": 34,
+        "grounded": 0.14705882352941177,
+        "latency_ms_p50": 32.06595004303381,
+        "latency_ms_mean": 34.10659118226784,
+        "metric": {
+          "n": 34,
+          "recall": 0.75,
+          "hit1": 0.29411764705882354,
+          "rr": 0.525
+        },
+        "dimension": {
+          "n": 29,
+          "recall": 0.27586206896551724,
+          "hit1": 0.034482758620689655,
+          "rr": 0.22017092103299
+        },
+        "value": {
+          "n": 7,
+          "recall": 0.14285714285714285,
+          "hit1": 0.0,
+          "rr": 0.03571428571428571
+        },
+        "index_build_s": 0.07918919972144067
+      },
+      "cases": [
+        {
+          "id": "total_revenue",
+          "question": "What is our total revenue?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "customer_count",
+              "units_sold",
+              "order_count"
+            ]
+          }
+        },
+        {
+          "id": "customer_count",
+          "question": "How many customers are there?",
+          "grounded": false,
+          "missing": [
+            "customer_count"
+          ],
+          "metric": {
+            "recall": 0.0,
+            "hit1": 0.0,
+            "rr": 0.2,
+            "top": [
+              "units_sold",
+              "order_count",
+              "revenue",
+              "avg_order_value"
+            ]
+          }
+        },
+        {
+          "id": "order_count",
+          "question": "How many orders have been placed?",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.25,
+            "top": [
+              "customer_count",
+              "avg_order_value",
+              "revenue",
+              "order_count"
+            ]
+          }
+        },
+        {
+          "id": "units_total",
+          "question": "How many tracks were sold in total?",
+          "grounded": false,
+          "missing": [
+            "units_sold"
+          ],
+          "metric": {
+            "recall": 0.0,
+            "hit1": 0.0,
+            "rr": 0.2,
+            "top": [
+              "customer_count",
+              "revenue",
+              "avg_order_value",
+              "order_count"
+            ]
+          }
+        },
+        {
+          "id": "aov_total",
+          "question": "What is the average order value?",
+          "grounded": false,
+          "missing": [
+            "avg_order_value"
+          ],
+          "metric": {
+            "recall": 0.0,
+            "hit1": 0.0,
+            "rr": 0.2,
+            "top": [
+              "customer_count",
+              "units_sold",
+              "order_count",
+              "revenue"
+            ]
+          }
+        },
+        {
+          "id": "revenue_by_year",
+          "question": "Revenue by year",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "customer_count",
+              "units_sold",
+              "avg_order_value"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "year",
+              "customer_country",
+              "customer",
+              "media_type"
+            ]
+          }
+        },
+        {
+          "id": "revenue_by_country",
+          "question": "Show revenue by country",
+          "grounded": false,
+          "missing": [
+            "country"
+          ],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.3333333333333333,
+            "top": [
+              "units_sold",
+              "order_count",
+              "revenue",
+              "avg_order_value"
+            ]
+          },
+          "dimension": {
+            "recall": 0.0,
+            "hit1": 0.0,
+            "rr": 0.1,
+            "top": [
+              "track",
+              "quarter",
+              "year",
+              "genre"
+            ]
+          }
+        },
+        {
+          "id": "units_by_genre",
+          "question": "Units sold by genre",
+          "grounded": false,
+          "missing": [
+            "units_sold",
+            "genre"
+          ],
+          "metric": {
+            "recall": 0.0,
+            "hit1": 0.0,
+            "rr": 0.2,
+            "top": [
+              "order_count",
+              "customer_count",
+              "revenue",
+              "avg_order_value"
+            ]
+          },
+          "dimension": {
+            "recall": 0.0,
+            "hit1": 0.0,
+            "rr": 0.125,
+            "top": [
+              "customer",
+              "media_type",
+              "artist",
+              "support_rep"
+            ]
+          }
+        },
+        {
+          "id": "revenue_by_media_type",
+          "question": "Revenue per media type",
+          "grounded": false,
+          "missing": [
+            "media_type"
+          ],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "avg_order_value",
+              "units_sold",
+              "order_count"
+            ]
+          },
+          "dimension": {
+            "recall": 0.0,
+            "hit1": 0.0,
+            "rr": 0.08333333333333333,
+            "top": [
+              "track",
+              "support_rep",
+              "month",
+              "year"
+            ]
+          }
+        },
+        {
+          "id": "revenue_by_rep",
+          "question": "Revenue by support rep",
+          "grounded": false,
+          "missing": [
+            "revenue",
+            "support_rep"
+          ],
+          "metric": {
+            "recall": 0.0,
+            "hit1": 0.0,
+            "rr": 0.2,
+            "top": [
+              "customer_count",
+              "order_count",
+              "avg_order_value",
+              "units_sold"
+            ]
+          },
+          "dimension": {
+            "recall": 0.0,
+            "hit1": 0.0,
+            "rr": 0.1,
+            "top": [
+              "album",
+              "quarter",
+              "country",
+              "track"
+            ]
+          }
+        },
+        {
+          "id": "aov_by_year",
+          "question": "Average order value by year",
+          "grounded": false,
+          "missing": [
+            "year"
+          ],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "avg_order_value",
+              "customer_count",
+              "order_count",
+              "units_sold"
+            ]
+          },
+          "dimension": {
+            "recall": 0.0,
+            "hit1": 0.0,
+            "rr": 0.16666666666666666,
+            "top": [
+              "quarter",
+              "support_rep",
+              "album",
+              "media_type"
+            ]
+          }
+        },
+        {
+          "id": "revenue_units_by_year",
+          "question": "Revenue and units sold per year",
+          "grounded": false,
+          "missing": [
+            "units_sold",
+            "year"
+          ],
+          "metric": {
+            "recall": 0.5,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "avg_order_value",
+              "order_count",
+              "customer_count"
+            ]
+          },
+          "dimension": {
+            "recall": 0.0,
+            "hit1": 0.0,
+            "rr": 0.08333333333333333,
+            "top": [
+              "track",
+              "album",
+              "support_rep",
+              "artist"
+            ]
+          }
+        },
+        {
+          "id": "revenue_year_media",
+          "question": "Revenue by year and media type",
+          "grounded": false,
+          "missing": [
+            "media_type"
+          ],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.5,
+            "top": [
+              "avg_order_value",
+              "revenue",
+              "units_sold",
+              "order_count"
+            ]
+          },
+          "dimension": {
+            "recall": 0.5,
+            "hit1": 0.0,
+            "rr": 0.3333333333333333,
+            "top": [
+              "album",
+              "country",
+              "year",
+              "genre"
+            ]
+          }
+        },
+        {
+          "id": "rock_2024",
+          "question": "Revenue from Rock tracks in 2024",
+          "grounded": false,
+          "missing": [
+            "genre",
+            "year",
+            "genre=Rock"
+          ],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.3333333333333333,
+            "top": [
+              "order_count",
+              "units_sold",
+              "revenue",
+              "avg_order_value"
+            ]
+          },
+          "dimension": {
+            "recall": 0.0,
+            "hit1": 0.0,
+            "rr": 0.2,
+            "top": [
+              "quarter",
+              "track",
+              "customer_country",
+              "album"
+            ]
+          },
+          "value": {
+            "recall": 0.0,
+            "hit1": 0.0,
+            "rr": 0.0,
+            "top": [
+              "genre=TV Shows",
+              "artist=The Office",
+              "country=Belgium",
+              "artist=Miles Davis"
+            ]
+          }
+        },
+        {
+          "id": "brazil_revenue",
+          "question": "What was the revenue in Brazil?",
+          "grounded": false,
+          "missing": [
+            "country=Brazil"
+          ],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.5,
+            "top": [
+              "customer_count",
+              "revenue",
+              "units_sold",
+              "order_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.3333333333333333,
+            "top": [
+              "artist",
+              "genre",
+              "country",
+              "track"
+            ]
+          },
+          "value": {
+            "recall": 0.0,
+            "hit1": 0.0,
+            "rr": 0.0,
+            "top": [
+              "country=United Kingdom",
+              "artist=Nirvana",
+              "artist=Gonzaguinha",
+              "artist=Maurizio Pollini"
+            ]
+          }
+        },
+        {
+          "id": "orders_2023",
+          "question": "How many orders were placed in 2023?",
+          "grounded": false,
+          "missing": [
+            "year"
+          ],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.3333333333333333,
+            "top": [
+              "revenue",
+              "units_sold",
+              "order_count",
+              "customer_count"
+            ]
+          },
+          "dimension": {
+            "recall": 0.0,
+            "hit1": 0.0,
+            "rr": 0.125,
+            "top": [
+              "track",
+              "month",
+              "country",
+              "customer_country"
+            ]
+          }
+        },
+        {
+          "id": "usa_units_2025",
+          "question": "Units sold in the United States in 2025",
+          "grounded": false,
+          "missing": [
+            "country",
+            "country=USA"
+          ],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.5,
+            "top": [
+              "customer_count",
+              "units_sold",
+              "avg_order_value",
+              "revenue"
+            ]
+          },
+          "dimension": {
+            "recall": 0.5,
+            "hit1": 0.0,
+            "rr": 0.25,
+            "top": [
+              "customer",
+              "album",
+              "media_type",
+              "year"
+            ]
+          },
+          "value": {
+            "recall": 0.0,
+            "hit1": 0.0,
+            "rr": 0.0,
+            "top": [
+              "artist=Godsmack",
+              "artist=Judas Priest",
+              "genre=Hip Hop/Rap",
+              "artist=Jimi Hendrix"
+            ]
+          }
+        },
+        {
+          "id": "revenue_since_2024",
+          "question": "Total revenue since 2024",
+          "grounded": false,
+          "missing": [
+            "revenue"
+          ],
+          "metric": {
+            "recall": 0.0,
+            "hit1": 0.0,
+            "rr": 0.2,
+            "top": [
+              "avg_order_value",
+              "customer_count",
+              "units_sold",
+              "order_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.25,
+            "top": [
+              "customer_country",
+              "genre",
+              "customer",
+              "year"
+            ]
+          }
+        },
+        {
+          "id": "revenue_between",
+          "question": "Revenue between 2022 and 2023",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "customer_count",
+              "avg_order_value",
+              "order_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.3333333333333333,
+            "top": [
+              "genre",
+              "album",
+              "year",
+              "media_type"
+            ]
+          }
+        },
+        {
+          "id": "jazz_by_year",
+          "question": "Jazz revenue by year",
+          "grounded": false,
+          "missing": [
+            "genre",
+            "year",
+            "genre=Jazz"
+          ],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.5,
+            "top": [
+              "avg_order_value",
+              "revenue",
+              "units_sold",
+              "order_count"
+            ]
+          },
+          "dimension": {
+            "recall": 0.0,
+            "hit1": 0.0,
+            "rr": 0.2,
+            "top": [
+              "customer_country",
+              "country",
+              "support_rep",
+              "month"
+            ]
+          },
+          "value": {
+            "recall": 0.0,
+            "hit1": 0.0,
+            "rr": 0.0,
+            "top": [
+              "artist=Os Mutantes",
+              "artist=Raimundos",
+              "artist=Faith No More",
+              "artist=The Posies"
+            ]
+          }
+        },
+        {
+          "id": "top5_genres_units",
+          "question": "Top 5 genres by units sold",
+          "grounded": false,
+          "missing": [
+            "units_sold",
+            "genre"
+          ],
+          "metric": {
+            "recall": 0.0,
+            "hit1": 0.0,
+            "rr": 0.2,
+            "top": [
+              "revenue",
+              "avg_order_value",
+              "customer_count",
+              "order_count"
+            ]
+          },
+          "dimension": {
+            "recall": 0.0,
+            "hit1": 0.0,
+            "rr": 0.16666666666666666,
+            "top": [
+              "quarter",
+              "artist",
+              "year",
+              "media_type"
+            ]
+          }
+        },
+        {
+          "id": "top3_customers",
+          "question": "Who are the top 3 customers by spend?",
+          "grounded": false,
+          "missing": [
+            "customer"
+          ],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "units_sold",
+              "customer_count",
+              "avg_order_value"
+            ]
+          },
+          "dimension": {
+            "recall": 0.0,
+            "hit1": 0.0,
+            "rr": 0.16666666666666666,
+            "top": [
+              "quarter",
+              "customer_country",
+              "country",
+              "album"
+            ]
+          }
+        },
+        {
+          "id": "best_country",
+          "question": "Which country spends the most?",
+          "grounded": false,
+          "missing": [
+            "revenue"
+          ],
+          "metric": {
+            "recall": 0.0,
+            "hit1": 0.0,
+            "rr": 0.2,
+            "top": [
+              "units_sold",
+              "customer_count",
+              "order_count",
+              "avg_order_value"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.3333333333333333,
+            "top": [
+              "support_rep",
+              "media_type",
+              "country",
+              "customer_country"
+            ]
+          }
+        },
+        {
+          "id": "top10_artists",
+          "question": "Top 10 artists by revenue",
+          "grounded": false,
+          "missing": [
+            "artist"
+          ],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "revenue",
+              "avg_order_value",
+              "customer_count",
+              "units_sold"
+            ]
+          },
+          "dimension": {
+            "recall": 0.0,
+            "hit1": 0.0,
+            "rr": 0.14285714285714285,
+            "top": [
+              "country",
+              "media_type",
+              "customer",
+              "customer_country"
+            ]
+          }
+        },
+        {
+          "id": "busiest_year",
+          "question": "Which year had the most orders?",
+          "grounded": false,
+          "missing": [
+            "year"
+          ],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "order_count",
+              "avg_order_value",
+              "revenue",
+              "units_sold"
+            ]
+          },
+          "dimension": {
+            "recall": 0.0,
+            "hit1": 0.0,
+            "rr": 0.14285714285714285,
+            "top": [
+              "quarter",
+              "month",
+              "customer_country",
+              "country"
+            ]
+          }
+        },
+        {
+          "id": "top_genre_in_germany",
+          "question": "What are the top 3 genres by revenue in Germany?",
+          "grounded": false,
+          "missing": [
+            "genre"
+          ],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.5,
+            "top": [
+              "customer_count",
+              "revenue",
+              "avg_order_value",
+              "units_sold"
+            ]
+          },
+          "dimension": {
+            "recall": 0.5,
+            "hit1": 0.0,
+            "rr": 0.25,
+            "top": [
+              "year",
+              "customer",
+              "track",
+              "country"
+            ]
+          },
+          "value": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.25,
+            "top": [
+              "country=Australia",
+              "artist=Faith No More",
+              "country=Czech Republic",
+              "country=Germany"
+            ]
+          }
+        },
+        {
+          "id": "monthly_orders_2023",
+          "question": "Monthly order count in 2023",
+          "grounded": false,
+          "missing": [
+            "month",
+            "year"
+          ],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.5,
+            "top": [
+              "avg_order_value",
+              "order_count",
+              "customer_count",
+              "units_sold"
+            ]
+          },
+          "dimension": {
+            "recall": 0.0,
+            "hit1": 0.0,
+            "rr": 0.2,
+            "top": [
+              "media_type",
+              "album",
+              "customer",
+              "support_rep"
+            ]
+          }
+        },
+        {
+          "id": "quarterly_revenue_2024",
+          "question": "Quarterly revenue in 2024",
+          "grounded": false,
+          "missing": [
+            "year"
+          ],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.25,
+            "top": [
+              "customer_count",
+              "order_count",
+              "avg_order_value",
+              "revenue"
+            ]
+          },
+          "dimension": {
+            "recall": 0.5,
+            "hit1": 0.0,
+            "rr": 0.3333333333333333,
+            "top": [
+              "album",
+              "track",
+              "quarter",
+              "customer_country"
+            ]
+          }
+        },
+        {
+          "id": "benign_list",
+          "question": "List the top 3 genres by revenue",
+          "grounded": false,
+          "missing": [
+            "genre"
+          ],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.3333333333333333,
+            "top": [
+              "customer_count",
+              "units_sold",
+              "revenue",
+              "avg_order_value"
+            ]
+          },
+          "dimension": {
+            "recall": 0.0,
+            "hit1": 0.0,
+            "rr": 0.08333333333333333,
+            "top": [
+              "album",
+              "country",
+              "quarter",
+              "media_type"
+            ]
+          }
+        },
+        {
+          "id": "benign_show",
+          "question": "Show me total sales for Canada",
+          "grounded": false,
+          "missing": [
+            "country",
+            "country=Canada"
+          ],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.25,
+            "top": [
+              "units_sold",
+              "customer_count",
+              "order_count",
+              "revenue"
+            ]
+          },
+          "dimension": {
+            "recall": 0.0,
+            "hit1": 0.0,
+            "rr": 0.125,
+            "top": [
+              "year",
+              "month",
+              "genre",
+              "media_type"
+            ]
+          },
+          "value": {
+            "recall": 0.0,
+            "hit1": 0.0,
+            "rr": 0.0,
+            "top": [
+              "artist=Ant\u00f4nio Carlos Jobim",
+              "artist=Zeca Pagodinho",
+              "artist=System Of A Down",
+              "genre=Heavy Metal"
+            ]
+          }
+        },
+        {
+          "id": "hard_having",
+          "question": "Which genres earned more than $100 in revenue?",
+          "grounded": false,
+          "missing": [
+            "genre"
+          ],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.5,
+            "top": [
+              "units_sold",
+              "revenue",
+              "customer_count",
+              "avg_order_value"
+            ]
+          },
+          "dimension": {
+            "recall": 0.0,
+            "hit1": 0.0,
+            "rr": 0.08333333333333333,
+            "top": [
+              "month",
+              "artist",
+              "media_type",
+              "customer"
+            ]
+          }
+        },
+        {
+          "id": "hard_share",
+          "question": "What share of total revenue comes from Rock?",
+          "grounded": false,
+          "missing": [
+            "genre",
+            "genre=Rock"
+          ],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.3333333333333333,
+            "top": [
+              "customer_count",
+              "units_sold",
+              "revenue",
+              "avg_order_value"
+            ]
+          },
+          "dimension": {
+            "recall": 0.0,
+            "hit1": 0.0,
+            "rr": 0.08333333333333333,
+            "top": [
+              "track",
+              "customer_country",
+              "support_rep",
+              "country"
+            ]
+          },
+          "value": {
+            "recall": 0.0,
+            "hit1": 0.0,
+            "rr": 0.0,
+            "top": [
+              "artist=The Police",
+              "artist=Emerson String Quartet",
+              "artist=Roger Norrington, London Classical Players",
+              "artist=The Office"
+            ]
+          }
+        },
+        {
+          "id": "hard_compare_years",
+          "question": "Compare revenue in 2024 versus 2023",
+          "grounded": true,
+          "missing": [],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.3333333333333333,
+            "top": [
+              "customer_count",
+              "units_sold",
+              "revenue",
+              "order_count"
+            ]
+          },
+          "dimension": {
+            "recall": 1.0,
+            "hit1": 0.0,
+            "rr": 0.5,
+            "top": [
+              "artist",
+              "year",
+              "customer",
+              "customer_country"
+            ]
+          }
+        },
+        {
+          "id": "hard_every_year",
+          "question": "How many customers made a purchase in every year of data?",
+          "grounded": false,
+          "missing": [
+            "year"
+          ],
+          "metric": {
+            "recall": 1.0,
+            "hit1": 1.0,
+            "rr": 1.0,
+            "top": [
+              "customer_count",
+              "units_sold",
+              "order_count",
+              "avg_order_value"
+            ]
+          },
+          "dimension": {
+            "recall": 0.0,
+            "hit1": 0.0,
+            "rr": 0.09090909090909091,
+            "top": [
+              "artist",
+              "customer_country",
+              "media_type",
+              "customer"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "skipped": {}
+}

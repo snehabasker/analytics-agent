@@ -21,6 +21,7 @@ dependencies = [
 
 [project.optional-dependencies]
 dev = ["pytest>=8", "pytest-cov", "httpx"]
+cohere = ["cohere>=5.13"]
 
 [project.scripts]
 analytics-eval = "analytics_agent.evals.run:main"
