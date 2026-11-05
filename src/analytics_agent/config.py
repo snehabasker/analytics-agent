@@ -17,6 +17,11 @@ class Settings:
     # Narration is summarisation of already-computed rows: a smaller, cheaper model is enough.
     narrate_model: str = field(default_factory=lambda: os.getenv("ANALYTICS_NARRATE_MODEL", "claude-haiku-5-5"))
     qdrant_url: str | None = field(default_factory=lambda: os.getenv("QDRANT_URL") or None)
+    # Retrieval backends. "hashing"/"none" are offline; "cohere" needs COHERE_API_KEY + `pip install cohere`.
+    embedder: str = field(default_factory=lambda: os.getenv("ANALYTICS_EMBEDDER", "hashing"))
+    reranker: str = field(default_factory=lambda: os.getenv("ANALYTICS_RERANKER", "none"))
+    cohere_embed_model: str = field(default_factory=lambda: os.getenv("COHERE_EMBED_MODEL", "embed-v4.0"))
+    cohere_rerank_model: str = field(default_factory=lambda: os.getenv("COHERE_RERANK_MODEL", "rerank-v3.5"))
     trace_file: Path | None = field(default_factory=lambda: Path(p) if (p := os.getenv("TRACE_FILE")) else None)
     max_rows: int = field(default_factory=lambda: int(os.getenv("MAX_ROWS", "200")))
     query_timeout_s: float = field(default_factory=lambda: float(os.getenv("QUERY_TIMEOUT_S", "10")))

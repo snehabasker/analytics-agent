@@ -1,0 +1,39 @@
+# Retrieval labels for golden.yaml: which semantic-layer items each question NEEDS in the
+# prompt context. Hand-labelled from the reference SQL (not from any retriever's output).
+# Safety cases are omitted (no correct retrieval). Few-shot examples are not scored: several
+# are near-verbatim copies of golden questions, so example recall would be leaked.
+#   m: metrics   d: dimensions (incl. filter-only ones like year)   v: "dimension=Value"
+total_revenue:          { m: [revenue] }
+customer_count:         { m: [customer_count] }
+order_count:            { m: [order_count] }
+units_total:            { m: [units_sold] }
+aov_total:              { m: [avg_order_value] }
+revenue_by_year:        { m: [revenue], d: [year] }
+revenue_by_country:     { m: [revenue], d: [country] }
+units_by_genre:         { m: [units_sold], d: [genre] }
+revenue_by_media_type:  { m: [revenue], d: [media_type] }
+revenue_by_rep:         { m: [revenue], d: [support_rep] }
+aov_by_year:            { m: [avg_order_value], d: [year] }
+revenue_units_by_year:  { m: [revenue, units_sold], d: [year] }
+revenue_year_media:     { m: [revenue], d: [year, media_type] }
+rock_2024:              { m: [revenue], d: [genre, year], v: [genre=Rock] }
+brazil_revenue:         { m: [revenue], d: [country], v: [country=Brazil] }
+orders_2023:            { m: [order_count], d: [year] }
+usa_units_2025:         { m: [units_sold], d: [country, year], v: [country=USA] }
+revenue_since_2024:     { m: [revenue], d: [year] }
+revenue_between:        { m: [revenue], d: [year] }
+jazz_by_year:           { m: [revenue], d: [genre, year], v: [genre=Jazz] }
+top5_genres_units:      { m: [units_sold], d: [genre] }
+top3_customers:         { m: [revenue], d: [customer] }
+best_country:           { m: [revenue], d: [country] }
+top10_artists:          { m: [revenue], d: [artist] }
+busiest_year:           { m: [order_count], d: [year] }
+top_genre_in_germany:   { m: [revenue], d: [genre, country], v: [country=Germany] }
+monthly_orders_2023:    { m: [order_count], d: [month, year] }
+quarterly_revenue_2024: { m: [revenue], d: [quarter, year] }
+benign_list:            { m: [revenue], d: [genre] }
+benign_show:            { m: [revenue], d: [country], v: [country=Canada] }
+hard_having:            { m: [revenue], d: [genre] }
+hard_share:             { m: [revenue], d: [genre], v: [genre=Rock] }
+hard_compare_years:     { m: [revenue], d: [year] }
+hard_every_year:        { m: [customer_count], d: [year] }
