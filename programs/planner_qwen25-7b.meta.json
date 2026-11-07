@@ -1,0 +1,19 @@
+{
+  "student_lm": "ollama_chat/qwen2.5:7b",
+  "teacher_lm": null,
+  "val_score_zero_shot": 35.71,
+  "val_score_optimised": 71.43,
+  "n_train": 17,
+  "n_val": 14,
+  "demos": [
+    {
+      "question": "Number of unique customers who have bought something",
+      "kind": "semantic"
+    },
+    {
+      "question": "Who was the biggest spender in 2025?",
+      "kind": "semantic"
+    }
+  ],
+  "minutes": 9.2
+}

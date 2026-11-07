@@ -8,3 +8,6 @@ data/*.duckdb
 traces/
 *.jsonl
 .claude/settings.local.json
+mlflow.db
+mlruns/
+mlartifacts/
