@@ -22,6 +22,8 @@ dependencies = [
 [project.optional-dependencies]
 dev = ["pytest>=8", "pytest-cov", "httpx"]
 cohere = ["cohere>=5.13"]
+dspy = ["dspy>=3.0"]          # DSPy planner + prompt optimiser (evals/optimize.py)
+mlflow = ["mlflow>=3.1"]      # experiment tracking for eval/optimise runs (evals/tracking.py)
 
 [project.scripts]
 analytics-eval = "analytics_agent.evals.run:main"

@@ -8,6 +8,8 @@ Dataset: Chinook (digital music store), loaded into `data/warehouse.duckdb`.
 - `pytest` — unit + integration tests (offline, ~3s)
 - `python -m analytics_agent.evals.run --min-accuracy 0.85` — eval gate on the heuristic baseline
 - `python -m analytics_agent.evals.run --llm claude` — eval the real model (needs `ANTHROPIC_API_KEY`)
+- `python -m analytics_agent.evals.optimize` — DSPy prompt optimisation on train.yaml (needs Ollama `qwen2.5:7b`, ~10 min)
+- `python -m analytics_agent.evals.run --llm dspy --dspy-program programs/<file>.json --mlflow` — eval a DSPy program, log to MLflow
 - `uvicorn analytics_agent.api:app --reload` — serve
 
 ## Architecture invariants (do not break these)
@@ -25,6 +27,7 @@ Dataset: Chinook (digital music store), loaded into `data/warehouse.duckdb`.
   tables* (never reuse the layer's own SQL as the reference).
 - Eval cases must be able to fail: when adding a check, mutate the thing under test once to confirm it goes red.
 - Never put raw `customer`/`employee` PII columns in the layer; extend `pii_columns` instead.
+- Never optimise on `golden.yaml`: the optimiser reads only `train.yaml`, and a test checks the two never share a question.
 - YAML gotcha: bare `on`/`yes`/`no` keys parse as booleans — name keys `condition`, not `on`.
 
 ## Gotchas

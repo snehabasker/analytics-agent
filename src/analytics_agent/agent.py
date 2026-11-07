@@ -185,6 +185,18 @@ class AnalyticsAgent:
             trace_id=trace.trace_id, trace=trace.export() if include_trace else None,
         )
 
+    def run_plan(self, plan: Plan) -> State:
+        """Validate and execute an already-made plan (no planning, no repair). Used by the prompt optimiser's metric,
+        so training is scored by exactly the code path the agent uses."""
+        if plan.kind == "refuse":
+            return {"status": "refused", "refusal_reason": plan.reason}
+        s: State = {"plan": plan, "attempts": 0}
+        s.update(self._validate(s))
+        if s.get("error"):
+            return {**s, "status": "error"}
+        s.update(self._execute(s))
+        return {**s, "status": "error"} if s.get("error") else s
+
     def close(self) -> None:
         self.warehouse.close()
 
@@ -236,7 +248,11 @@ def build_agent(settings: Settings | None = None, llm: LLM | None = None, layer:
     index = SemanticIndex(layer, embedder=make_embedder(settings), qdrant_url=settings.qdrant_url,
                           values=values, reranker=make_reranker(settings))
     if llm is None:
-        if settings.resolved_llm() == "claude":
+        if settings.resolved_llm() == "dspy":
+            from .dspy_planner import DSPyLLM, make_lm  # lazy: dspy is an optional extra
+            llm = DSPyLLM(layer, _schema_text(wh, layer), values, lm=make_lm(settings.dspy_lm),
+                          program_path=settings.dspy_program)
+        elif settings.resolved_llm() == "claude":
             llm = ClaudeLLM(layer, _schema_text(wh, layer), settings.model, settings.narrate_model)
         else:
             llm = HeuristicLLM(layer, values)

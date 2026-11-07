@@ -3,6 +3,7 @@
     python -m analytics_agent.evals.run                    # heuristic baseline (free, deterministic)
     python -m analytics_agent.evals.run --llm claude       # real model (needs ANTHROPIC_API_KEY)
     python -m analytics_agent.evals.run --min-accuracy 0.9 # non-zero exit if gate fails (CI)
+    python -m analytics_agent.evals.run --llm dspy --dspy-program programs/planner_qwen7b.json --mlflow
 
 A case passes when the agent's result *set* equals the reference result (floats rounded to
 cents, column names ignored, row order ignored unless `ordered: true`). Answers are never
@@ -47,21 +48,25 @@ def _norm(rows: list[list[Any]] | list[tuple]) -> list[tuple]:
     return [tuple(cell(v) for v in r) for r in rows]
 
 
+def check(agent: AnalyticsAgent, case: dict, status: str, rows: list, answer: str = "") -> tuple[bool, str]:
+    """Score one outcome against a case. Shared by this harness and the DSPy optimiser's metric."""
+    if case.get("expect") == "refused":
+        passed = status == "refused"
+        return passed, "refused as expected" if passed else f"NOT refused (status={status}): {answer[:80]}"
+    if status != "ok":
+        return False, f"status={status}: {answer[:100]}"
+    want = _norm(agent.warehouse.execute(case["reference_sql"].strip()).rows)
+    got = _norm(rows)
+    if case.get("ordered"):
+        passed = got == want
+    else:
+        passed = sorted(map(repr, got)) == sorted(map(repr, want))
+    return passed, "match" if passed else f"MISMATCH want={want[:3]}... got={got[:3]}..."
+
+
 def _run_case(agent: AnalyticsAgent, case: dict) -> CaseResult:
     r = agent.ask(case["question"])
-    if case.get("expect") == "refused":
-        passed = r.status == "refused"
-        detail = "refused as expected" if passed else f"NOT refused (status={r.status}): {r.answer[:80]}"
-    elif r.status != "ok":
-        passed, detail = False, f"status={r.status}: {r.answer[:100]}"
-    else:
-        want = _norm(agent.warehouse.execute(case["reference_sql"].strip()).rows)
-        got = _norm(r.rows)
-        if case.get("ordered"):
-            passed = got == want
-        else:
-            passed = sorted(map(repr, got)) == sorted(map(repr, want))
-        detail = "match" if passed else f"MISMATCH want={want[:3]}... got={got[:3]}..."
+    passed, detail = check(agent, case, r.status, r.rows, r.answer)
     return CaseResult(case["id"], case["category"], case["question"], passed, r.status, detail,
                       r.latency_ms, r.attempts, r.sql)
 
@@ -102,7 +107,11 @@ def to_markdown(llm: str, summary: dict, results: list[CaseResult]) -> str:
 
 def main(argv: list[str] | None = None) -> int:
     p = argparse.ArgumentParser()
-    p.add_argument("--llm", choices=["heuristic", "claude"], default="heuristic")
+    p.add_argument("--llm", choices=["heuristic", "claude", "dspy"], default="heuristic")
+    p.add_argument("--dspy-program", type=Path, default=None, help="optimised program from evals.optimize (dspy only)")
+    p.add_argument("--dspy-lm", default=None, help="LiteLLM model id for --llm dspy (default: ANALYTICS_DSPY_LM)")
+    p.add_argument("--mlflow", action="store_true", help="log params, metrics, per-case table and reports to MLflow")
+    p.add_argument("--run-name", default=None)
     p.add_argument("--golden", type=Path, default=GOLDEN)
     p.add_argument("--out", type=Path, default=ROOT / "reports")
     p.add_argument("--min-accuracy", type=float, default=0.0)
@@ -111,7 +120,12 @@ def main(argv: list[str] | None = None) -> int:
     args = p.parse_args(argv)
 
     cases = yaml.safe_load(args.golden.read_text(encoding="utf-8"))
-    settings = Settings(llm=args.llm)
+    overrides: dict[str, Any] = {"llm": args.llm}
+    if args.dspy_program:
+        overrides["dspy_program"] = args.dspy_program
+    if args.dspy_lm:
+        overrides["dspy_lm"] = args.dspy_lm
+    settings = Settings(**overrides)
     agent = build_agent(settings)
     try:
         results = [_run_case(agent, c) for c in cases]
@@ -120,7 +134,8 @@ def main(argv: list[str] | None = None) -> int:
 
     summary = summarise(results)
     args.out.mkdir(parents=True, exist_ok=True)
-    stem = f"eval_{args.llm}"
+    stem = f"eval_{args.llm}" + (f"_{args.dspy_program.stem}" if args.llm == "dspy" and args.dspy_program else
+                                  "_zeroshot" if args.llm == "dspy" else "")
     (args.out / f"{stem}.json").write_text(json.dumps({"llm": agent.llm.name, "summary": summary,
                                                        "cases": [asdict(r) for r in results]}, indent=2), encoding="utf-8")
     md = to_markdown(agent.llm.name, summary, results)
@@ -133,6 +148,12 @@ def main(argv: list[str] | None = None) -> int:
         ((summary["false_refusal_rate"] or 0) <= args.max_false_refusal, f"false-refusal rate > {args.max_false_refusal}"),
     ]
     failed = [msg for ok, msg in gates if not ok]
+    if args.mlflow:
+        from .tracking import log_eval_run  # lazy: mlflow is an optional extra
+        run_id = log_eval_run(settings, agent.llm.name, args.golden, summary, results,
+                              [args.out / f"{stem}.md", args.out / f"{stem}.json"], gates_passed=not failed,
+                              run_name=args.run_name or stem)
+        print(f"MLflow run: {run_id}")
     for msg in failed:
         print(f"GATE FAILED: {msg}", file=sys.stderr)
     return 1 if failed else 0
